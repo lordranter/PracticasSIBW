@@ -1,0 +1,22 @@
+Observaciones para el funcionamiento de la web:
+
+-Para que los archivos .php generen correctamente la web; será necesario indicar la primera vez que se conecta al servidor que valor de la variable lang se desea,
+EJ: si deseamos la web en Español usaremos: localhost(si nos conectamos desde la misma máquina):<puerto de escucha del servidor web>?lang=es_ES(para recibir la 
+web en Español; o bien en_EN para recibirla en Inglés, aunque solo está traducida en partes).
+
+-Para que funcione el envío del email de respuesta hay que editar el archivo script.php y escribir el usuario en $usuario y la contraseña en $contrasena.
+Solamente es válido para el servidor de correo de la UGR. Si se quisiera usar otro servidor de correo EJ: GMAIL etc. habría que averigurar su dirección de SMTP,
+el tipo de autenticación y el puerto del servidor y cambiar los valores de los objetos $mailC y $mailS.
+
+-Puede que no carguen correctamente los slider javaScript; para arreglarlo recargar la web limpiando la caché (ctrl + F5), puede que haga falta realizarlo más de
+una vez.
+
+-Se ha desarrollado pensando en modelo vista controlador, separando los contenidos de la página web y la visualización de esta misma.
+
+-Se ha desarrollado adaptando la página web para su posible internacionalización, y para ello se ha usado un pequeño script en php, ubicado en la carpeta core/init.php
+y se han escrito los ficheros de idiomas que serán un Array llamado lang donde por clave tendrá el string original, y por valor tendrá la traducción al idioma concreto.
+Estos archivos se han ubicado en la carpeta lang/(es_ES o en_EN) respectivamente.
+
+
+Práctica realizada por Antonio Javier Benítez Guijarro y Francisco Javier Ortega Palacios.
+

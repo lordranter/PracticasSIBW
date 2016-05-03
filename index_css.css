@@ -1,0 +1,1149 @@
+@charset "utf-8";
+
+/* CSS para la incrustación de las fuentes de la web */
+/* Webfont: Lato-Bold */@font-face {
+    font-family: 'LatoWebBold';
+    src: url('fonts/Lato-Bold.eot'); /* IE9 Compat Modes */
+    src: url('fonts/Lato-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/Lato-Bold.woff2') format('woff2'), /* Modern Browsers */
+         url('fonts/Lato-Bold.woff') format('woff'), /* Modern Browsers */
+         url('fonts/Lato-Bold.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+/* Webfont: Lato-Medium */@font-face {
+    font-family: 'LatoWebMedium';
+    src: url('fonts/Lato-Medium.eot'); /* IE9 Compat Modes */
+    src: url('fonts/Lato-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/Lato-Medium.woff2') format('woff2'), /* Modern Browsers */
+         url('fonts/Lato-Medium.woff') format('woff'), /* Modern Browsers */
+         url('fonts/Lato-Medium.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+/* Webfont: Lato-Regular */@font-face {
+    font-family: 'LatoWeb';
+    src: url('fonts/Lato-Regular.eot'); /* IE9 Compat Modes */
+    src: url('fonts/Lato-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/Lato-Regular.woff2') format('woff2'), /* Modern Browsers */
+         url('fonts/Lato-Regular.woff') format('woff'), /* Modern Browsers */
+         url('fonts/Lato-Regular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+/* CSS para los elementos comunes de la web */
+figure,ul {margin:0;
+padding:0;}
+
+ul{
+	
+	list-style: none;
+	
+}
+
+
+img {
+    max-width: 100%;
+    height: auto;
+    width: auto\9; /* ie8 */
+}
+
+h2,h1 {
+	
+	margin: 0;
+}
+body {
+	
+    display: block;
+    margin: 8px;
+    margin-top: 8px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    margin-left: 8px;
+	font-family: "LatoWeb";
+
+	
+	
+	
+	
+	}
+	
+	p{
+		color: white;
+
+	}
+
+
+#index_menu-principal a {
+
+	color: #4E4E4E;
+	
+	text-decoration: none;
+	
+	font-size: 90%;
+	
+	
+	
+
+}
+
+h3{
+	text-align: center;
+
+}
+
+/* CSS para dar formato al menu desplegable de las promociones. */
+
+#caja{
+
+	display: none;
+	
+	left: 0;
+	right: 0;
+	
+	top:85px;
+	background-color: rgba(0, 0, 0, 0.74);
+	position: fixed;
+	padding-top: 20px;
+	padding-bottom: 5px;
+	z-index:200;
+
+}
+
+#caja div{
+
+	display: inline-block;
+}
+
+#menu_promociones_desplegable{
+
+	text-align: center;
+	
+	
+	
+}
+
+.dropdown{
+
+	display: inline-block;
+	position: relative;
+
+}
+
+.dropdown:hover #caja{
+
+	display: inline-block;
+
+}
+
+.dropText{
+
+	color: #4E4E4E;
+	font-size: 90%;
+	
+	text-transform: uppercase;
+	height: 66px;
+	border: none;
+	background-color: white;
+	
+	cursor: pointer;
+
+}
+
+
+/* CSS para el menu desplegable de las promociones */
+
+/* CSS para cambiar el color del fondo de las promociones cuando el raton se ponga encima */
+.menu_desplegable_promo:hover {
+
+	background-color: white;
+
+}
+
+/* CSS para cambiar el color de la fuente cuando el raton este encima de las promociones del menu deplegable */
+.menu_desplegable_promo:hover .parrafo_promo_desplegable_titulillo, .menu_desplegable_promo:hover .parrafo_promo_desplegable_contenido{
+
+	color: black!important;
+
+}
+
+
+
+/* CSS para los titulos y el contenido de las promociones en el menu desplegable */
+.parrafo_promo_desplegable_titulillo, .parrafo_promo_desplegable_contenido{
+	
+
+	color: #9C9C9C!important;
+	text-align: center;
+	
+
+}
+
+#parrafo_promo_desplegable_titulillo_especial1, #parrafo_promo_desplegable_titulillo_especial2, #parrafo_promo_desplegable_titulillo_especial3{
+
+	padding-bottom: 18px;
+
+}
+
+.parrafo_promo_desplegable_titulillo{
+
+	color: #F3F3F3;
+	margin: 0;
+	margin-top: 5px;
+	padding: 0;
+
+}
+
+.parrafo_promo_desplegable_contenido{
+
+	text-transform: none;
+	font-size: 80%;
+	margin-top: 10px;
+	margin-bottom: 8px;
+
+}
+
+.menu_desplegable_promo{
+
+	width: 12.0%;
+	margin-left: 5px;
+
+}
+
+.imagen_promo_desplegable{
+
+	text-align: center;
+	
+}
+
+#prueba{
+	
+	height: 10%;
+	
+}
+
+
+
+/* CSS para el menu de navegacion */	
+#index_menu_mgeneral1 {
+	
+
+	height: 86px;
+	width: 100%;
+
+	position: fixed;
+    background-color: white;
+	box-shadow: 0px 8px 37px rgba(181, 181, 181, 0.62);
+    z-index: 200;
+	top:0;
+	right: 0;
+	left: 0;
+	
+
+}
+
+.promo_parrafo{
+	
+	font-size: 17px;
+	font-weight: bold;
+	
+}
+
+#index_contenedor {
+	
+    top: 0px;
+    left:0px;
+    right:0px;
+    bottom:0px;
+    overflow-y:scroll;  
+	margin: 0px;
+	overflow:hidden;
+	
+}
+
+.index_menu_marco {
+	
+	
+	background-image: initial;
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat-x: initial;
+    background-repeat-y: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: rgb(58, 206, 32);
+	
+	
+	}
+	
+#index_menu_cuadro_logo_navegacion {
+	box-sizing: border-box;
+	padding-left: 10px;
+	padding-right: 10px
+	
+	
+	}
+
+
+#index_menu_logo_navegacion1 {
+	
+    height: 80px;
+    position: relative;
+    float: left;
+	
+	}
+    
+	
+.index_menu_navegacion {
+        
+        float: right;
+        position: relative;
+        
+        }
+        
+#index_menu-principal {
+        
+        position: relative;
+        float: right;
+        
+
+		
+        list-style: none;
+        margin: 0;
+        padding: 0;
+		
+        
+}
+
+        
+#index_cuadro_navegacion {
+    
+    float: right!important;
+	padding-top: 20px;
+    
+}
+
+#index_menu-principal {
+    
+    list-style: none;
+    
+    
+}
+
+.index_elemento_menu {
+    
+    display: inline-block;
+	text-transform: uppercase;
+	padding-right: 40px;
+	
+	
+}
+
+.index_elemento_lista_servicios {
+
+	display: inline-block;
+	vertical-align:	middle;
+    padding: 40px;
+	
+}
+
+
+/* CSS seccion bienvenida */
+#index_imagen_bienvenida1 {
+
+	width: 100%;
+	height: 50%;
+}
+
+#index_cuadro_info_precios {
+
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	right: 0;
+	background-color: rgb(66, 85, 109);
+	box-shadow: 0px -13px 26px rgba(0, 0, 0, 0.62);
+	
+}
+
+#index_bienvenida_contenedor{
+
+	position:relative;
+	box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.62);
+	width: 100%;
+
+}
+
+#index_cabecera_bienvenida {
+
+	color: #7692B5;
+	padding-top: 7px;
+
+}
+
+
+/* CSS para las secciones */
+.index_titulo_seccion {
+
+	text-align: center;
+	font-size: 180%;
+	color: #E8E8E8;
+	text-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+	
+}
+
+.index_resto {
+
+	text-align: center;
+	font-family: Helvetica;
+	
+
+}
+
+#index_cuadro_info1{
+	
+	text-align: center;
+	font-family: Helvetica;
+
+}
+
+
+/* CSS seccion promociones */
+#index_cuadro1_lista_promociones{
+	
+	
+	text-align: center;
+	position: relative;
+	float: left;
+	width: 50%;
+	
+	
+
+	
+}
+
+#index_cuadro2_lista_promociones{
+	
+	text-align: center;
+	position: relative;
+	float: right;
+	width: 50%;
+	
+}
+
+.index_lista_promociones{
+
+	list-style: none;
+	
+}
+
+
+/* CSS seccion habitaciones */
+#index_cuadro_habitacion1{
+
+	text-align:center;
+	background: url("Imagenes/fondo-cuadro-habitcacion.png") no-repeat center center;
+	background-size: 95% auto;
+	padding-bottom: 20px;
+	
+	
+
+}
+
+.index_img_habitacion{
+	padding-top: 17px;
+	padding-bottom: 10px;
+
+}
+
+.index_div_separador{
+
+	width: 100%;
+	height: 30px;
+
+}
+
+#index_cuadro_habitacion2{
+
+
+	background: url("Imagenes/fondo-cuadro-habitcacion.png") no-repeat center center;
+	background-size: auto auto;
+	position: relative;
+	text-align:center;
+	max-width: 40%;
+	width:auto;
+	padding-top: 15px;
+	padding-bottom: 30px;
+
+
+	
+	
+
+}
+
+#div_habitaciones_vacio{
+	
+	width: 14.5%;
+	
+}
+
+#index_cuadro_habitacion3{
+
+
+	background: url("Imagenes/fondo-cuadro-habitcacion.png") no-repeat center center;
+	background-size: auto auto;
+	position: relative;
+	text-align:center;
+	max-width: 40%;
+	width: auto;
+	padding-top: 15px;
+	padding-bottom: 30px;
+	padding-left: 4px;
+	padding-right: 4px;
+
+
+}
+
+
+/* CSS seccion contacto y ubicacion */
+#index_cuadro_mapa{
+	text-align: center;
+	width:100%;
+	position: relative;
+	box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.21);
+}
+
+
+#index_mapa_provisional{
+	width: 100%;
+	height: 50%;
+
+
+}
+
+#index_contacto_info{
+	
+	position: absolute;
+	background-color: rgba(0,0,0,0.7);
+	width:20%;
+    bottom: 5px;
+
+	right:0;
+	padding-bottom: 15px;
+
+}
+
+input[type="text"], textarea {
+
+  background-color : #d1d1d1; 
+  font-family: Helvetica;
+
+}
+
+textarea {
+    border: 1px solid transparent;
+    outline: none;
+    color: #FFFFFF;
+    box-sizing: border-box;
+    
+    background-clip: padding-box;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.50);
+
+    border-radius: 0;
+
+}
+
+input[type ="text"]{
+	
+	border: 1px solid transparent;
+    outline: none;
+    color: #FFFFFF;
+	
+	background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.50);
+	
+    box-sizing: border-box;
+	
+}
+
+#index_titulo_contacto2{
+	
+	padding-bottom: 30px;
+	padding-top: 10px;
+	text-align: center;
+	
+	background: url("Imagenes/vlcsnap-2016-03-24-02h24m33s200.jpg") no-repeat center;
+	background-size: cover;
+	
+	
+	
+}
+
+
+#index_contacto_info form p{
+	
+	color: white;
+	margin: 0px;
+	
+}
+
+#index_contacto_info input, textarea{
+	width: 80%;
+	min-height: 200px;
+}
+
+
+#enviarMensaje{
+	display: block;
+	margin:auto;
+	
+	font-family: "LatoWebBold";
+    
+	background: rgba(0, 0, 0, 0.50);
+    border: none;
+    color: white;
+    padding-bottom: 6px;
+    padding-top: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    font-size: 17px;
+	
+}
+
+#confirmacionEnvio{
+	color: green;
+    font-weight: bold;
+}
+
+.index_titulo_contacto{
+
+	text-align: center;
+	font-weight: bold;
+	font-size: 24px;
+
+	text-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+	color: #white;
+
+}
+
+#index_contacto_lista{
+	
+	list-style: none;
+	color: white;
+	
+
+}
+
+/* CSS datos de redes sociales */
+.index_lista_redes_sociales li{
+	
+	list-style: none;
+	display: inline-block;
+	padding: 10px;
+	
+}
+
+.index_elemento_lista_redes_sociales img{
+	
+	width: 20px;
+
+	
+}
+
+/* CSS seccion servicios y promociones */
+#index_servicios {
+	
+	//background-image: url("Imagenes/fa85f2944dceb66d40dbef4f4ea4dfc2.jpg");
+	
+	box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.62);
+	position: relative;
+}
+
+#index_promociones{
+	background-image: url("Imagenes/690acc3838d69aa5955bc53030282114.png");
+	//background-color: red;
+	overflow: auto;
+	padding-bottom: 20px;
+	box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.62);
+	
+	
+}
+#index_cabecera_servicios{
+
+	padding-top: 40px;
+	padding-bottom: 30px;
+	color: black;
+}
+
+#index_parrafo_servicios{
+
+	margin-left: 250px;
+	margin-right: 250px;
+	color: black;
+	
+	padding-bottom: 40px;
+
+}
+
+#index_titulo_servicios{
+
+	color: black;
+	text-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+
+}
+
+#index_lista_servicios{
+
+	padding-bottom: 30px;
+}
+
+#index_titulo_promociones{
+
+	padding-top: 40px;
+	padding-bottom: 30px;
+	text-shadow: 3px 3px rgba(0, 0, 0, 0.74);
+	
+}
+
+#index_parrafo_contacto{
+
+	text-align: center;
+
+}
+
+#index_contenedor_habitaciones_2, #index_contenedor_habitaciones_2 div{
+
+	display: inline-block;
+	text-align: center;
+
+}
+
+#index_cuadro_habitaciones{
+
+	text-align: center;
+
+}
+
+#index_contenedor_habitaciones_2{
+
+	max-width: 100%;
+	width: auto;
+
+}
+
+#index_parrafo_descripcion_habitaciones{
+
+	text-align:	center;
+}
+
+#index_parrafo_promociones{
+	
+	text-align: center;
+	margin: 0;
+	padding-bottom: 70px;
+	padding-top: 20px;
+
+}
+
+.index_cuadro_lista_promociones{
+
+	padding-top: 20px;
+	padding-bottom:	20px;
+
+}
+
+#index_contenedor_habitaciones{
+
+	overflow: auto;
+	padding-left: 10%;
+	padding-right: 10%;
+	background: url("Imagenes/629c6de52d1ababe0de2eb02bdf4889a.png") no-repeat center center;
+	background-size: 90% auto;
+	text-align: center;
+
+} 
+
+#index_ver_mas_promo{
+
+	padding-left: 80%;
+    color: black;
+    font-size: 17px;
+    text-align: right;
+	font-weight: bold;
+	text-shadow: 2px 2px rgba(0, 0, 0, 0.12);
+
+}
+
+.index_elemento_promocion{
+
+	padding-bottom: 5px;
+	padding-top: 5px;
+
+}
+
+#index_habitaciones{
+
+	position: relative;
+	padding-top: 40px;
+	padding-bottom: 30px;
+	background: url("Imagenes/fondo2.jpg") no-repeat fixed;
+	background-position: center top;
+    background-size: cover;
+	
+	//background-size: 90%;
+	
+	box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.62);
+	
+	overflow: auto;
+
+}
+
+.index_titulo_habitacion{
+
+	font-weight: bold;
+    font-size: 19px;
+
+}
+
+#index_redes_sociales{
+
+	background-color: #444444;
+
+}
+
+#index_contacto_mapa{
+
+	background-color: #2B2B2B;
+	padding-top: 25px;
+	
+	box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.62);
+
+}
+
+/*__________________________________________________________________________________________*/
+
+.contenedor {
+
+margin-top: 90px;
+margin-left: 30px;
+margin-right: 30px;
+left: 0px;
+right: 0px;
+bottom: 0px;
+padding: 8px;    
+}
+
+.contenedor p {
+color: black;
+}
+
+.promotion {
+clear: right;
+}
+
+.promotion p {
+color: black;
+}
+
+.promotioninfo {
+float: left;
+clear: left;
+margin-top: 1.5em;
+margin-right: 1.0em;
+width: 40%;
+}
+
+.promotioninfo ul li {
+margin-left: 1.0em;
+}
+
+.promotionimg {
+margin-top: 1.5em;
+float: right;
+width: 55%;
+}
+
+img.fullDiv {
+width: 100%;
+}
+
+.fullpromotion {
+clear: left;
+padding: 10px;
+margin-top: 1.5em;
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+}
+
+#EvaluationGeneral{
+padding: 8px;
+margin-top: 1.5em;
+margin-left: 1.5em;
+margin-right: 1.5em;
+clear: right;	
+}
+
+#EvaluationGeneral ul li{
+list-style: none;
+}
+
+#EvaluationInfo {
+float: left;
+clear: left;
+margin-top: 1.5em;
+margin-right: 1.0em;
+width: 40%;
+}
+
+#EvaluationStats{
+margin-top: 1.5em;
+float: right;
+width: 55%;
+}
+
+.nota{
+background: #fff none repeat scroll 0 0;
+border: 2px solid #000;
+border-radius: 50%;
+font-size: 30px;
+height: 50px;
+line-height: 44px;
+margin-top: 25px;
+float: right;
+text-align: center;
+width: 50px;
+clear: left;
+}
+
+.comentario {
+padding: 8px;
+margin-top: 1.5em;
+margin-left: 1.5em;
+margin-right: 1.5em;
+clear: right;
+}
+
+.comentario h4 {
+font-size: 1.5em;
+}
+
+.comentario ul li{
+list-style: none;
+display: inline;
+}
+
+.comentarioContenido {
+float: left;
+}
+
+.comentarioContenido .details
+{
+position: relative;
+top: -1.5em;
+font-size: 0.8em;
+color: #787878;
+}
+
+#Galeria{
+width: 90%;
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+}
+
+#Galeria img{
+padding: 2px;	
+}
+
+/* CSS slider */
+
+.container{
+	width:800px;
+	height:auto;
+	padding:20px;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	margin: 0 auto;
+
+}
+.image-slider-wrapper{
+	overflow: hidden;
+}
+#image_slider{
+	position: relative;
+	overflow: hidden;
+	height: 484px;
+	padding:0;
+	left:0;
+}
+#image_slider li{
+	position:relative;
+	max-width: 100%;
+	float:left;
+	list-style: none;
+	left: 0;
+}
+
+/* CSS del slidebar */
+
+#sideBarBoton{
+	
+	top: 86px;
+	height: auto;
+	position: fixed;
+	right: 0;
+	z-index: 501;
+	width: 87px;
+	background-color: rgba(0, 0, 0, 0.74);
+	text-align: center;
+	
+	-webkit-transition: width 2s, height 4s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s, height 4s;
+	
+	
+}
+
+
+
+#sideBarBoton:hover #flechaSide{
+	
+	-ms-transform: rotate(180deg); /* IE 9 */
+    -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+    transform: rotate(180deg);
+	
+}
+
+
+
+
+#sideBarBoton:hover #sideBar, #sideBarBoton:hover{
+	
+	width: 20%;
+	
+	-webkit-transition: width 2s, height 4s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s, height 4s;
+	
+	
+	
+	
+}
+
+#sideBar{
+	
+	top: 86px;
+	height: 100%;
+	width: 0%;
+	
+	text-align: center;
+	
+	background-color: rgba(0, 0, 0, 0.74);
+	
+	position: fixed;
+	right: 0;
+	z-index:-1;
+	
+	
+}
+
+
+
+#flechaSide{
+	
+	width: 87px;
+	max-height: 49.48px;
+
+	
+}
+
+/* CSS slider siderbar */
+
+.sidebarContainer{
+	width:260px;
+	height:auto;
+	padding:20px;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	margin: 40px auto;
+
+}
+.sidebarSliderWrapper{
+	overflow: hidden;
+}
+#sidebarSlider{
+	position: relative;
+	overflow: hidden;
+	height: auto;
+	padding:0;
+	left:0;
+}
+#sidebarSlider li{
+	position:relative;
+	max-width: 100%;
+	float:left;
+	list-style: none;
+	left: 0;
+}
+
+/* CSS content sidebar */
+
+#textoSideBar{
+	color: white;
+	text-decoration: none;
+}
+
+.text-side-bar, .text-side-bar  a{
+	color: white;
+	text-decoration: none;
+	font-size: 17px;
+	padding-top: 15px;
+	padding-bottom: 20px;
+	
+}
+
+.text-side-bar ul{
+
+	list-style: none;
+
+}
+
+.text-side-bar2{
+
+	padding-top: 7px;
+	padding-bottom: 7px;
+
+}
+
+.items-submenu-sidebar, .items-submenu-sidebar a{
+	color: white;
+	text-decoration: none;
+	font-size: 13px;
+	
+}
+
+.items-submenu-sidebar a:hover {
+	text-shadow: 2px 2px rgba(189, 189, 189, 0.3);
+}
+
+
+
+#imagen_separadora_img{
+	height: auto;
+	width: auto;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	
+}
+
