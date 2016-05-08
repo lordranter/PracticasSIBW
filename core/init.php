@@ -7,6 +7,11 @@ if( isset($_GET['lang'])===true && in_array($_GET['lang'],$lenguas_permitidas) =
 	include 'lang/' . $_GET['lang'] .  '.php';
 	$_SESSION['lang'] = $_GET['lang'];
 	
+}else
+{
+	$_SESSION['lang'] = "es_ES";
+	
+	
 }
 
 	include 'lang/' . $_SESSION['lang'] .  '.php';
