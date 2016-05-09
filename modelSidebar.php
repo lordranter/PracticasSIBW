@@ -24,7 +24,7 @@ class ModelSidebar{
 	}
 		
 	function getSidebar($section){
-	include 'lang/' . $_SESSION['lang'] . '.php';
+		include 'lang/' . $_SESSION['lang'] . '.php';
 		$sidebarIconSource = "Imagenes/flecha-despliegue.png";
 		$sidebarSliderImages = array($lang['Imagenes/PromocionAlhambraSlider2.jpg'], $lang['Imagenes/PromocionTrenYFlamencofSlider2.jpg'], $lang['Imagenes/PromocionFlamencofSlider2.jpg']);
 		$sidebarDividerSource = "Imagenes/linea.png";
