@@ -31,7 +31,7 @@ class ModelContentPromociones{
 	}
 	
 	function getContentPromociones(){
-	include 'lang/' . $_SESSION['lang'] . '.php';
+		include 'lang/' . $_SESSION['lang'] . '.php';
 	
 		$contentPromociones = new ContentPromociones(array(new MajorPromotion($lang['Habitacion doble + visita guiada al Alhambra'],
 																				$lang['Incluye:'],

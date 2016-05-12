@@ -34,7 +34,7 @@ class ModelContentValoraciones{
 	}
 	
 	function getContentValoraciones(){
-	include 'lang/' . $_SESSION['lang'] . '.php';
+		include 'lang/' . $_SESSION['lang'] . '.php';
 		$stats = array(new Stat($lang['Limpieza: '],
 								"9.2",
 								"Imagenes/IconoLimpieza.png",

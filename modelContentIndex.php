@@ -1,7 +1,4 @@
 <?php
-
-
-
 class WelcomeSection{
 	function WelcomeSection($title, $introduction, $hotelPresentation, $imageSource){
 		$this->title = $title;
@@ -37,7 +34,7 @@ class ContactContent{
 		$this->mapSource = $mapSource;
 		$this->contactDataTitle = $contactDataTitle;
 		$this->contactData = $contactData;
-		$this->contactFormData = $contactFormData;		
+		$this->contactFormData = $contactFormData;
 	}
 }
 
@@ -66,10 +63,8 @@ class ModelContentIndex{
 	}
 	
 	function getContentIndex(){
-	require 'core/init.php';
-	
-
-	
+		require 'core/init.php';
+		
 		$contentIndex = new ContentIndex(new WelcomeSection($lang['Bienvenido al Hotel Plaza Nueva Granada'], 
 															$lang['El Hotel Plaza Nueva está situado en el pleno centro monumental, comercial y administrativo de Granada, a 10 minutos de la Alhambra.'], 
 															$lang[' Cada planta del hotel y cada habitación poseen un nombre y encanto propio. Este nombre es una representación de un evento importante en la vida e historia de Granada. No tienen tarjetas magnéticas para abrir las puertas de las habitaciones, preferimos la originalidad que proporciona una tradicional llave. '], 
