@@ -18,14 +18,6 @@ if(isset($_GET["secc"])){
 	$section = "";
 }
 if($section=="testReservations"){
-	include 'reservations.php';
-	
-	$servername = "localhost:7777";
-	$username = "test";
-	$password = "test";
-	
-	$reservations = new Reservations($servername, $username, $password);
-	
 }else{
 	$controller = new Controller($section);
 	$controller->createTitle();
