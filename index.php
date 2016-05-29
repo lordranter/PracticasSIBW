@@ -18,14 +18,15 @@ if(isset($_GET["secc"])){
 	$section = "";
 }
 if($section=="testReservations"){
-	include 'reservations.php';
-	
-	$servername = "localhost:7777";
-	$username = "test";
-	$password = "test";
-	
-	$reservations = new Reservations($servername, $username, $password);
-	
+	include 'reservationController.php';
+
+	$reservationController = new ReservationController() ;
+	$test1 = $reservationController->escogerFecha("2016-05-01" , "2016-05-03");
+	$test2 = $reservationController->escogerFecha("2016-05-05" , "2016-05-06");
+	$test3 = $reservationController->escogerFecha("2016-05-02" , "2016-05-06");
+	$test4 = $reservationController->escogerFecha("2016-04-29" , "2016-05-22");
+	$test4 = $reservationController->escogerFecha("2016-01-29" , "2016-03-22");
+	$reservationController->payReservation(1);
 }else{
 	$controller = new Controller($section);
 	$controller->createTitle();
@@ -46,5 +47,7 @@ if($section=="testReservations"){
 	?>
 
 	</body>
+<?php
 }
+?>
 </html> 

@@ -36,6 +36,14 @@ CREATE TABLE `client` (
   `email` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `client`
+--
+
+INSERT INTO `client` (`id`, `address`, `name`, `surname`, `idCard`, `phone`, `email`) VALUES
+(1, 'test', 'test', 'test', 'test', 123456789, 'test'),
+(2, 'x', 'x', 'x', 'x', 987654312, 'x');
+
 -- --------------------------------------------------------
 
 --
@@ -78,6 +86,13 @@ CREATE TABLE `reservation` (
   `clientID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `reservation`
+--
+
+INSERT INTO `reservation` (`id`, `checkIn`, `checkOut`, `paid`, `promotionID`, `clientID`) VALUES
+(1, '2016-05-01', '2016-05-04', 0, NULL, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -90,6 +105,15 @@ CREATE TABLE `roomreservation` (
   `id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `roomreservation`
+--
+
+INSERT INTO `roomreservation` (`reservation`, `roomtype`, `id`) VALUES
+(1, 1, 1),
+(1, 1, 2),
+(1, 2, 3);
+
 -- --------------------------------------------------------
 
 --
@@ -100,6 +124,15 @@ CREATE TABLE `roomtype` (
   `id` int(11) NOT NULL,
   `maxCapacity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `roomtype`
+--
+
+INSERT INTO `roomtype` (`id`, `maxCapacity`) VALUES
+(1, 23),
+(2, 31),
+(3, 42);
 
 -- --------------------------------------------------------
 

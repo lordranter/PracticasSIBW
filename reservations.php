@@ -1,47 +1,61 @@
 <?php
 class RoomTypeNum{
-	function RoomReservation($idTypeRoom, $numRooms){
+	function RoomTypeNum($idTypeRoom, $numRooms){
 		$this->idTypeRoom = $idTypeRoom;
 		$this->numRooms = $numRooms;
 	}	
 }
 
 class Reservations{
-	function Reservations($serverName, $userName, $password){
-		$connection = new mysqli($serverName, $userName, $password);
+	function Reservations(){			
+		$servername = "localhost";
+		$username = "test";
+		$password = "test";
+		$database = "hotelplazanueva";
+		$port = 3306;
+
+		$connection = new mysqli($servername, $username, $password, $database, $port);
 		if($connection->connect_error){
 			die("Connection failed: " . $connection->connect_error);
 		}else{
-			$this->connection = $conn;
-			echo "Connected successfully";
+			$this->connection = $connection;
 		}
 	}
-	
-	function getNumeroHabitaciones(){
+
+	function getNumberOfRooms(){
 		$sql = "select sum(maxCapacity) as totalRooms from roomtype";	
 		$result = $this->connection->query($sql);	
-		$totalRooms = mysql_fetch_assoc($result);
+		$totalRooms = $result->fetch_assoc();
 		
+		return $totalRooms["totalRooms"];
+	}
+
+	function getNumberOfRoomsOfAType($roomType){
+		$sql = "select sum(maxCapacity) as totalRooms from roomtype where id=" . $roomType;	
+		$result = $this->connection->query($sql);	
+		$totalRooms = $result->fetch_assoc();
+		
+		return $totalRooms["totalRooms"];
+	}
+
+	function getNumberOfReservedRooms(){		
 		$sql = "select count(*) as roomsReserved from roomreservation";		
 		$result = $this->connection->query($sql);
-		$roomsReserved = mysql_fetch_assoc($result);
+		$roomsReserved = $result->fetch_assoc();
 		
-		return $totalRooms - $roomsReserved		
-	}
-	
-	function getNumeroHabitaciones($roomType){
-		$sql = "select sum(maxCapacity) as totalRooms from roomtype where roomtype = " . $roomType;
-		$result = $this->connection->query($sql);	
-		$totalRooms = mysql_fetch_assoc($result);
-		
-		$sql = "select count(*) as roomsReserved from roomreservation where roomtype = " . $roomType;		
+		return $roomsReserved["roomsReserved"];
+	}	
+
+	function getNumberOfReservedRoomsOfAType($roomType){		
+		$sql = "select count(*) as roomsReserved from roomreservation where roomtype=" . $roomType;		
 		$result = $this->connection->query($sql);
-		$roomsReserved = mysql_fetch_assoc($result);
+		$roomsReserved = $result->fetch_assoc();
 		
-		return $totalRooms - $roomsReserved
-	}
+		return $roomsReserved["roomsReserved"];
+	}	
 	
-	function crearReserva($checkIn, $checkOut, $selectedRooms, $promotion, $client){
+	
+	function createReservation($checkIn, $checkOut, $selectedRooms, $promotion, $client){
 		$sql = "insert into  reservation (checkIn, checkOut, promotionID, clientID) values ('" . $checkIn . "', '" . $checkOut . "', '" . $promotion . "', '" . $client . "')";
 		
 		if ($this->connection->query($sql) === FALSE) {
@@ -61,28 +75,37 @@ class Reservations{
 		}		
 	}
 	
-	function consultarDisponibilidad($checkIn, $checkOut){
-		$resultado = array();
+	function getNumberOfRoomsReservedWithinAPeriodOfTimePerType($checkIn, $checkOut){
+		$result = array();
 		
 		$sql = "select id from roomtype";
 		
-		$result = $this->connection->query($sql);
+		$roomTypes = $this->connection->query($sql);
 		
-		if ($result->num_rows > 0) {
-			// output data of each row
-			while($row = $result->fetch_assoc()) {
+		if ($roomTypes->num_rows > 0) {
+			while($row = $roomTypes->fetch_assoc()) {
+				$sql = "select count(*) as roomsreserved from roomreservation, reservation 
+					where roomreservation.roomtype=" . $row["id"] . " 
+					and roomreservation.reservation=reservation.id 
+					and reservation.checkIn<=STR_TO_DATE('" . $checkOut . "', '%Y-%m-%d') 
+					and reservation.checkOut>=STR_TO_DATE('" . $checkIn . "', '%Y-%m-%d') 					
+					";
 				
-				$sql = "select count(*) from roomreservation where ";
+				$roomsReservedQuery = $this->connection->query($sql);
+				$roomsreserved = $roomsReservedQuery->fetch_assoc();
 				
-				array_push($resultado, new RoomTypeNum($row["id"], ));
+				array_push($result, new RoomTypeNum($row["id"],  $roomsreserved["roomsreserved"]));				
 			}
 		}
 		
-		
-		
-		
-		return $resultado;
+		return $result;
+	}
+
+	function pay($reservation){		
+		$sql = "update reservation set paid=1 where id=" . $reservation;		
+		$this->connection->query($sql);		
 	}
 	
 	
 }
+?>
