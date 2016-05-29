@@ -29,5 +29,21 @@ class ReservationController{
 		}
 		return $result;
 	}
+	
+	function deleteReservation($reservation){
+		$this->reservations->deleteReservation($reservation);
+	}
+	
+	function updateReservation($reservation, $checkIn, $checkOut, $selectedRooms, $promotion, $client, $paid){
+		$this->reservations->createReservation($reservation, $checkIn, $checkOut, $selectedRooms, $promotion, $client, $paid);
+	}
+	
+	function updateReservation($reservation, $checkIn, $checkOut, $selectedRooms, $promotion, $client, $paid){
+		$this->reservations->createReservation($reservation, $checkIn, $checkOut, $selectedRooms, $promotion, $client, $paid);
+	}
+	
+	function getReservation($reservation){
+		$this->reservations->getReservation($reservation);		
+	}
 }
 ?>
