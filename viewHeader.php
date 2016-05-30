@@ -8,7 +8,12 @@ class ViewHeader{
 		if($button->hasDropdownMenu == true){
 			$this->createButtonWithDropdown($button);
 		}else{
-			echo '<li class="index_elemento_menu"><a href="' . $button->link . '" class="">' . $button->text . '</a></li>';
+			if($button->isReserve == true)
+			{
+				echo '<li class="index_elemento_menu" id="botonReserva"><a href="' . $button->link . '" class="">' . $button->text . '</a></li>';
+			}else{
+				echo '<li class="index_elemento_menu"><a href="' . $button->link . '" class="">' . $button->text . '</a></li>';
+			}
 		}		
 	}
 	

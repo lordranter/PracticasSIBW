@@ -15,7 +15,7 @@ class Controller{
 		include 'lang/es_ES.php';
 		
 		$this->section = $secc;
-		if($this->section!="valoraciones" && $this->section!="imagenes" && $this->section!="promociones"){
+		if($this->section!="valoraciones" && $this->section!="imagenes" && $this->section!="promociones" && $this->section!="reserva" && $this->section!="reservaS" && $this->section!="reserva2" && $this->section!="reserva3" && $this->section!="reserva4"){
 			$this->section = "index";
 		}
 	}
@@ -28,6 +28,9 @@ class Controller{
 		}elseif($this->section=="imagenes"){
 			$titleContent = $modelTitle->getImagenesTitle();
 		}elseif($this->section=="promociones"){
+			$titleContent = $modelTitle->getPromocionesTitle();
+			
+		}elseif($this->section=="reserva"){
 			$titleContent = $modelTitle->getPromocionesTitle();
 		}else{
 			$titleContent = $modelTitle->getIndexTitle();	

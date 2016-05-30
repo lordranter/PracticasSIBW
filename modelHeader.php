@@ -14,6 +14,12 @@ class Button {
 		$this->text = $text;
 		$this->hasDropdownMenu = false;
 		$this->dropdownItems = array();
+		$this->isReserve = false;
+	}
+	
+	function setReserve()
+	{
+		$this->isReserve = true;
 	}
 	
 	function addDropdownItem($item){
@@ -56,7 +62,9 @@ class ModelHeader{
 		$buttonImagenes = new Button("?secc=imagenes", $lang['imágenes']);
 		$buttonContacto = new Button("?secc=index#index_contacto_mapa", $lang['contacto']);
 		$buttonOpiniones = new Button("?secc=valoraciones", $lang['opiniones']);
-		$headerContent = new HeaderContent(array($buttonBienvenida, $buttonServicios, $buttonPromociones, $buttonHabitaciones, $buttonImagenes, $buttonContacto, $buttonOpiniones));
+		$buttonReserva = new Button("?secc=reserva", $lang['reservar']);
+		$buttonReserva->setReserve();
+		$headerContent = new HeaderContent(array($buttonBienvenida, $buttonServicios, $buttonPromociones, $buttonHabitaciones, $buttonImagenes, $buttonContacto, $buttonOpiniones,$buttonReserva));
 		return $headerContent;
 	}
 	
