@@ -146,7 +146,10 @@ $lang = array(
 	' Habitacion doble + tren turistico + espectaculo flamenco ' => ' Habitacion doble + tren turistico + espectaculo flamenco ',
 	' Oferta dos noches ' => ' Oferta dos noches ',
 	' Oferta 10% de descuento ' => ' Oferta 10% de descuento ',
+	'OFERTA 10% descuento' => 'OFERTA 10% descuento',
+	'Disfrute de un 10% de descuento en su estancia.' => 'Disfrute de un 10% de descuento en su estancia.',
 	' Oferta reserva anticipada ' => ' Oferta reserva anticipada ',
+	' Promoción escogida: ' => ' Promoción escogida: ',
 	
 	
 	//___________________________________________________________________________________________________________________//
@@ -188,7 +191,11 @@ $lang = array(
 	'MM/AA' => 'MM/AA',
 	'CVC' => 'CVC',
 	'Aceptas los términos y condiciones del hotel.' => 'Aceptas los términos y condiciones del hotel.',
-	'DNI' => 'DNI'
+	'DNI' => 'DNI',
+	'Seleccione una fecha para consultar disponibilidad.' => 'Seleccione una fecha para consultar disponibilidad.',
+	' Habitaciones dobles: ' => ' Habitaciones dobles: ',
+	' Habitaciones triples: ' => ' Habitaciones triples: ',
+	' Habitacion superiores: ' => ' Habitacion superiores: '
 	
 );
 
