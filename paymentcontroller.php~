@@ -1,8 +1,8 @@
 <?php
-class ReservationController{
-	function ReservationController(){
-		include 'reservations.php';
-		include 'paymentController.php';
+class PaymentController{
+	function PaymentController(){
+		include 'bankadapter.php';
+		include 'paymentcontroller.php';
 		$this->reservations = new Reservations();
 	}
 	
@@ -28,26 +28,6 @@ class ReservationController{
 			$result = true;
 		}
 		return $result;
-	}
-	
-	function deleteReservation($reservation){
-		$this->reservations->deleteReservation($reservation);
-	}
-	
-	function updateReservation($reservation, $checkIn, $checkOut, $selectedRooms, $promotion, $client, $paid){
-		$this->reservations->updateReservation($reservation, $checkIn, $checkOut, $selectedRooms, $promotion, $client, $paid);
-	}
-	
-	function getReservation($reservation){
-		$this->reservations->getReservation($reservation);		
-	}
-
-	function getReservationByClientID($clientID){
-		return $this->reservations->getReservationByClientID($clientID);
-	}
-
-	function getReservationByPromotionID($promotionID){
-		return $this->reservations->getReservationByPromotionID($promotionID);
 	}
 }
 ?>

@@ -1,4 +1,4 @@
-﻿<?php 
+<?php 
 $lang = array(
 
 	'Bienvenido al Hotel Plaza Nueva Granada' => 'Bienvenido al Hotel Plaza Nueva Granada',
@@ -130,7 +130,6 @@ $lang = array(
 	'imágenes' => 'imágenes',
 	'contacto' => 'contacto',
 	'opiniones' => 'opiniones',
-	'reservar' => 'reservar',
 	
 	//___________________________________________________________________________________________________________________//
 	//SIDEBAR//
@@ -155,40 +154,7 @@ $lang = array(
 	'Hotel Plaza Nueva Granada ***' => 'Hotel Plaza Nueva Granada ***',
 	'Promociones - ' => 'Promociones - ',
 	'Valoraciones - ' => 'Valoraciones - ',
-	'Imagenes - ' => 'Imagenes - ',
-	
-	
-	
-
-	//___________________________________________________________________________________________________________________//
-	//RESERVAS//
-	'Aceptar' => 'Aceptar',
-	'Continuar' => 'Continuar',
-	'Precio' => 'Precio',
-	'€' => '€',
-	'Cantidad' => 'Cantidad',
-	'Añadir' => 'Añadir',
-	'Retroceder' => 'Retroceder',
-	'Seleccionar' => 'Seleccionar',
-	'Fecha de entrada' => 'Fecha de entrada',
-	'Fecha de salida' => 'Fecha de salida',
-	
-	//___________________________________________________________________________________________________________________//
-	//RESERVAS FORMULARIO//
-	'Será obligatorio rellenar todos los campos a excepción de los opcionales marcados como (opcional).' => 'Será obligatorio rellenar todos los campos a excepción de los opcionales marcados como (opcional).',
-	'Nombre' => 'Nombre',
-	'Apellidos' => 'Apellidos',
-	'E-mail' => 'E-mail',
-	'Teléfono' => 'Teléfono',
-	'Dirección' => 'Dirección',
-	'Ciudad' => 'Ciudad',
-	'Es obligatorio rellenar todos los siguientes campos.' => 'Es obligatorio rellenar todos los siguientes campos.',
-	'Número de la tarjeta'=> 'Número de la tarjeta',
-	'Nombre del titular' => 'Nombre del titular',
-	'MM/AA' => 'MM/AA',
-	'CVC' => 'CVC',
-	'Aceptas los términos y condiciones del hotel.' => 'Aceptas los términos y condiciones del hotel.',
-	'DNI' => 'DNI'
+	'Imagenes - ' => 'Imagenes - '
 	
 );
 

@@ -46,7 +46,7 @@ class ReservationController{
 		return $this->reservations->getReservationByClientID($clientID);
 	}
 
-	function getReservationByPromotionID($promotionID){
+	function getReservationByPromotionID($clientID){
 		return $this->reservations->getReservationByPromotionID($promotionID);
 	}
 }

@@ -66,11 +66,7 @@ if($section=="test"){
 	//$clients->deleteClient(2);
 
 	$testSearch = $clients->getClientByExactMatch("aasdadacxzsd", "qwe", "asddqw", "adsxcz", "12311231221", "132123");
-	if ($testSearch->num_rows > 0) {
-		while($row = $testSearch->fetch_assoc()) {
-			echo $row["name"] . "\n";
-		}
-	}
+	echo $testSearch["name"] . "\n";
 }else{
 	$controller = new Controller($section);
 	$controller->createTitle();

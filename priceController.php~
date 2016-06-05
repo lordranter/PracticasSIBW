@@ -1,0 +1,30 @@
+<?php
+class PriceController{
+	function PriceController(){
+		include 'prices.php';
+		$this->prices = new Prices();
+	}
+
+	function createPrice($roomtype, $firstDay, $finalDay, $price){
+		return $this->clients->createPrice($roomtype, $firstDay, $finalDay, $price);
+	}
+	
+	
+	function deletePrice($id){
+		$this->clients->deleteClient($client);
+	}
+	
+	
+	function updatePrice($id, $roomtype, $firstDay, $finalDay, $price){
+		$this->clients->updatePrice($id, $roomtype, $firstDay, $finalDay, $price);
+	}
+	
+	function getPriceByID($id){
+		return $this->clients->getPriceByID($id);
+	}
+
+	function getPriceByDateRangeAndRoomType($roomtype, $firstDay, $finalDay){
+		return $this->clients->getPriceByDateRangeAndRoomType($roomtype, $firstDay, $finalDay);
+	}
+}
+?>

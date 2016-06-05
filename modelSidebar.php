@@ -40,6 +40,11 @@ class ModelSidebar{
 			array_push($sidebarText, new SidebarText("?secc=promociones#promotion4", $lang[' Oferta dos noches ']));
 			array_push($sidebarText, new SidebarText("?secc=promociones#promotion5", $lang[' Oferta 10% de descuento ']));
 			array_push($sidebarText, new SidebarText("?secc=promociones#promotion6", $lang[' Oferta reserva anticipada ']));
+		}elseif($section=="reserva" || $section=="reservaS" || $section=="reserva2" || $section=="reserva3"|| $section=="reserva4"){
+			array_push($sidebarText, new SidebarText("", $lang[' Habitaciones dobles: ']));
+			array_push($sidebarText, new SidebarText("", $lang[' Habitaciones triples: ']));
+			array_push($sidebarText, new SidebarText("", $lang[' Habitacion superiores: ']));
+			array_push($sidebarText, new SidebarText("", $lang[' Promoción escogida: ']));
 		}else{
 			array_push($sidebarText, new SidebarText("?secc=index#index_cabecera_Contacto", $lang['Contacto']));			
 		}

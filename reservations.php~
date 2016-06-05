@@ -135,15 +135,7 @@ class Reservations{
 	}
 
 	function getReservationByClientID($clientID){
-		$sql = "select * from reservation where clientID=" . $clientID;
-		
-		$query = $this->connection->query($sql);
-	
-		return $query;
-	}
-
-	function getReservationByPromotionID($promotionID){
-		$sql = "select * from reservation where promotionID=" . $promotionID;
+		$sql = "select * from reservation where clientID=" . $reservation;
 		
 		$query = $this->connection->query($sql);
 	
