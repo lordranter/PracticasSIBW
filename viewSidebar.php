@@ -19,6 +19,16 @@ class ViewSidebar{
 	function createSidebarElementPromociones($sidebarElement){
 		echo '<li class="items-submenu-sidebar" > <a href="' . $sidebarElement->link . '">'  . $sidebarElement->text .  '</a> </li>';
 	}
+	
+	function createSidebarElementReserva($sidebarElement,$id){
+		if($sidebarElement->text == ' Promoción escogida: ')
+		{
+			echo '<li class="items-submenu-sidebar resumen" >'  . $sidebarElement->text . '<p class="resumen promocionR" id="resumenP'.$id.'"> No seleccionada </p>  </li>';
+		}else{
+			echo '<li class="items-submenu-sidebar resumen" >'  . $sidebarElement->text . '<p class="resumen" id="resumenP'.$id.'"> 0 </p>  </li>';
+		}
+		
+	}
 
 	
 	function createSidebar($sidebarContent, $section){
@@ -52,6 +62,12 @@ class ViewSidebar{
 		}elseif($section=="promociones"){
 			for($i = 0; $i < count($sidebarContent->sidebarText); $i++){
 				$this->createSidebarElementPromociones($sidebarContent->sidebarText[$i]);
+				$this->addDivider($sidebarContent->sidebarDividerSource);
+			}
+		}
+		elseif($section=="reserva" || $section=="reservaS" || $section=="reserva2" || $section=="reserva3" || $section=="reserva4" ){
+			for($i = 0; $i < count($sidebarContent->sidebarText); $i++){
+				$this->createSidebarElementReserva($sidebarContent->sidebarText[$i],$i);
 				$this->addDivider($sidebarContent->sidebarDividerSource);
 			}
 		}else{

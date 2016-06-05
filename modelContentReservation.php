@@ -56,6 +56,11 @@ class modelContentReservation{
 		*/
 	}
 	
+	function noRooms()
+	{
+		$this->dateContent = new DateContent(); 
+	}
+	
 	function prueba1()
 	{
 			require 'modelContentIndex.php';
@@ -80,13 +85,12 @@ class modelContentReservation{
 	{
 		require 'core/init.php';
 		require 'modelContentIndex.php';
-		/*include 'reservationController.php';
-		include 'reservations.php';*/
 		
 		$this->dateContent = new DateContent();
 		$this->cantidades = array();
 		
 		$this->habitaciones = array();
+		$this->ids = array();
 		
 		for($i = 0; $i < count($RoomsTypeNum); $i++)
 		{
@@ -95,6 +99,7 @@ class modelContentReservation{
 				$this->habitaciones[] = new RoomContent($lang[' Habitación doble o twin '],
 				$lang[' En nuestras habitaciones standard disfrutará de todo el equipamiento y comodidades que su estancia en Granada merece. '],
 				$lang['Imagenes/habitacion1.jpg']);
+				
 			}elseif($RoomsTypeNum[$i]->idTypeRoom == 1)
 			{
 				$this->habitaciones[] = new RoomContent($lang[' Habitación superior '],
@@ -105,7 +110,7 @@ class modelContentReservation{
 				$lang[' En nuestras habitaciones triples podrá disfrutar de sus vacaciones en familia o con amigos en el centro de Granada. '],
 				$lang['Imagenes/habitacion3.jpg']);
 			}
-			
+			$this->ids[] = $RoomsTypeNum[$i]->idTypeRoom;
 			$this->cantidades[] = $RoomsTypeNum[$i]->numRooms;
 			
 		}
@@ -120,8 +125,8 @@ class modelContentReservation{
 		$this->dateContent = new DateContent();
 		require 'core/init.php';
 		$this->promociones = array(new Promotion($lang['Habitacion doble + visita guiada al Alhambra'],$lang['Descubrirá con nostros la única Ciudad Medieval Musulmana mejor conservada del mundo, la Alhambra; visitando sus palacios, Mexuar, Comares, Leones, Generalife; paseando por sus patios, de los Arrayenes, la Reja, la Acequia, la Sultana; y disfrutando de sus jardines, de Partal, de la Medina y por suspuesto del Generalife con sus gracioso juegos de agua, y su laberintico diseño.'],
-		$lang['Imagenes/PromocionAlhambraj.jpg']),new Promotion($lang['OFERTA DOS NOCHES'],
-																			$lang['Disfrute de un 10% de descuento en estancias de un mínimo de dos noches.'],
+		$lang['Imagenes/PromocionAlhambraj.jpg']),new Promotion($lang['OFERTA 10% descuento'],
+																			$lang['Disfrute de un 10% de descuento en su estancia.'],
 																			$lang['Imagenes/PromocionDosNoches.jpg']));
 	}
 	

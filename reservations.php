@@ -9,8 +9,8 @@ class RoomTypeNum{
 class Reservations{
 	function Reservations(){			
 		$servername = "localhost";
-		$username = "root";
-		$password = "root";
+		$username = "test";
+		$password = "test";
 		$database = "hotelplazanueva";
 		$port = 3306;
 

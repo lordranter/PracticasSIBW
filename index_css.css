@@ -1606,3 +1606,21 @@ width: 15%;
     display: inline-block;
 	*/
 }
+
+.resumen{
+	display: inline;
+	
+}
+
+.promocionR{
+	display: block;
+}
+.promocionR p{
+	
+	
+}
+
+.resumen p{
+	color: #48AEF9;
+	margin-left: 10px;
+}

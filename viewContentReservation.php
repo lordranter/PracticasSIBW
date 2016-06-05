@@ -3,33 +3,28 @@ class viewContentReservation{
 	function viewContentReservation(){
 		
 	}
+	function noRooms($dateContent)
+	{
+		$this->createDateSection($dateContent);
+		
+		require 'core/init.php';
+		echo '
+			<div class="marcoGeneral" id="marcoPrincipal">
+			
+				<p>'.$lang['Seleccione una fecha para consultar disponibilidad.'] .' </p>
+			
+			</div>
+			';
+	}
 	
 	function createDateSection($dateContent){
 	
 	require 'core/init.php';
 	
 		echo '
-			<script type=text/javascript">
-			function escogerFecha(){
-				$.ajax({
-					type:"POST",
-					url:"pickDate.php",
-					data: {"fechaIn="+ document.getElementById("fechaIn").value, "fechaOut="+document.getElementById("fechaOut").value},
-					dataType:"html",
-					sucess: function(respuesta){
-						document.getElementById("marcoPrincipal").innerHTML = respuesta;
-					}
-				
-				
-				
-				})
-
-
-				}
-			</script>
 			<div id="formulario-Reserva">
 
-				<form name="formularioContacto" method="POST" enctype="multipart/form-data" action="pickDate.php" id="fechas-Formulario">
+				<form name="formularioContacto" method="POST" enctype="multipart/form-data" onsubmit="guardarDatos();" action="pickDate.php" id="fechas-Formulario">
 							
 							
 					<p>' . $dateContent->dateIn . ':</p>
@@ -38,7 +33,7 @@ class viewContentReservation{
 					<input type="date" name="fechaOut" id="fechaOut">
 					
 					
-					<input id="botonAceptarFecha"  onclick="escogerFecha();" value="' .$lang['Aceptar'] .'">
+					<input id="botonAceptarFecha"  type="submit" onclick = "guardarDatos();" value="' .$lang['Aceptar'] .'">
 
 								
 
@@ -48,7 +43,7 @@ class viewContentReservation{
 		';
 	}
 	
-	function createRoomSection($roomContent,$prices,$cantidades)
+	function createRoomSection($roomContent,$prices,$cantidades,$ids)
 	{
 		require 'core/init.php';
 		echo '
@@ -59,7 +54,7 @@ class viewContentReservation{
 		';
 		
 		for($i = 0; $i < count($roomContent); $i++){
-			$this->createRoom($roomContent[$i],$prices[$i],$cantidades[$i]);
+			$this->createRoom($roomContent[$i],$prices[$i],$cantidades[$i],$ids[$i]);
 		}
 		echo '
 		<div class="cuadroHabitacionF cuadroBotones">
@@ -72,7 +67,7 @@ class viewContentReservation{
 		
 	}
 	
-	function createRoom($roomContent,$price, $cantidad)
+	function createRoom($roomContent,$price, $cantidad,$id)
 	{
 		require 'core/init.php';
 		
@@ -101,7 +96,7 @@ class viewContentReservation{
 				</div>
 				
 				<p class="cantidad">'. $lang['Cantidad'].'</p>
-				<select class="selectNumRooms">
+				<select class="selectNumRooms" id="cantidadhab'.$id.'">
 					';
 					
 					if($cantidad > 6)
@@ -109,12 +104,15 @@ class viewContentReservation{
 						$cantidad = 6;
 					}
 					
+					echo '<option value="0" selected>0</option>';
 					for($i = 0; $i < $cantidad; $i++){
-							echo '<option>'. $i .'</option>';
+						if($i != 0){
+							echo '<option value="'.$i.'">'. $i .'</option>';
+						}
 						}
 					echo '
 				</select>
-				<button type="button" class="botonAnadir">' . $lang['Añadir'].'</button>
+				<button type="button" onclick="addCarrito'. $id .'();" class="botonAnadir">' . $lang['Añadir'].'</button>
 		
 		</div>
 			
@@ -139,7 +137,7 @@ class viewContentReservation{
 		';
 		
 		for($i = 0; $i < count($promotionContent); $i++){
-			$this->createPromotion($promotionContent[$i]);
+			$this->createPromotion($promotionContent[$i],$i);
 		}
 		echo '
 		<div class="cuadroHabitacionF cuadroBotones">
@@ -156,7 +154,7 @@ class viewContentReservation{
 		
 	}
 	
-	function createPromotion($promotionContent)
+	function createPromotion($promotionContent,$id)
 	{
 
 		require 'core/init.php';
@@ -182,7 +180,7 @@ class viewContentReservation{
 		
 		<div class="infoPrecio">
 				
-				<button type="button" class="botonAnadir">'.$lang['Seleccionar'].'</button>
+				<button type="button" onclick="escogerPromocion'.$id.'();" class="botonAnadir">'.$lang['Seleccionar'].'</button>
 		
 		</div>
 			
@@ -216,7 +214,7 @@ class viewContentReservation{
 										<input type="email" id="email" />
 										
 										<p>'.$lang['Teléfono'].':</p>
-										<input type="tel" id="email" />
+										<input type="tel" id="telefono" />
 									</div>
 									
 									<div class="columna2">
@@ -239,14 +237,14 @@ class viewContentReservation{
 									<div class="form-container active">
 										<form action="">
 											<div id="numeroTar" >
-												<input class="inputA elem1"  placeholder="'.$lang['Número de la tarjeta'].'" type="text" name="number">
+												<input class="inputA elem1" id="numTar"  placeholder="'.$lang['Número de la tarjeta'].'" type="text" name="number">
 											</div>
 											<div id="nomTar">
-												<input class="inputA elem2" placeholder="'.$lang['Nombre del titular'].'" type="text" name="name">
+												<input class="inputA elem2" id="nombTitu" placeholder="'.$lang['Nombre del titular'].'" type="text" name="name">
 											</div>
 											<div id="fila">
-												<input class="inputA elem3" placeholder="'.$lang['MM/AA'].'" type="text" name="expiry">
-												<input class="inputA elem4" placeholder="'.$lang['CVC'].'" type="text" name="cvc">
+												<input class="inputA elem3" id="caducidad" placeholder="'.$lang['MM/AA'].'" type="text" name="expiry">
+												<input class="inputA elem4" id="Cseguridad" placeholder="'.$lang['CVC'].'" type="text" name="cvc">
 											</div>
 										</form>
 									</div>
@@ -268,17 +266,34 @@ class viewContentReservation{
 								<span>'. $lang['Retroceder'].'</span>
 							</a>
 						
-							<a class="botonPasos botonContinuar" rel="nextStep" href="?secc=reserva4" >
+							<a class="botonPasos botonContinuar" onclick="loadForm()" rel="nextStep"  >
 								<span>'. $lang['Continuar'].'</span>
 							</a>
 						</div>
 		';
 	}
 	
-	function createReservation1($dateContent,$roomContent,$prices,$cantidades)
+	function createResumen()
+	{
+				require 'core/init.php';
+		echo'
+		<div class="marcoGeneral">
+		<div  id="marcoGeneralR">
+						
+		</div>
+		<div class="cuadroHabitacionF cuadroBotones">
+							<a class="botonPasos" rel="backStep" href="?secc=reserva3" >
+								<span>'. $lang['Retroceder'].'</span>
+							</a>
+						</div>
+		</div>
+					';
+	}
+	
+	function createReservation1($dateContent,$roomContent,$prices,$cantidades,$ids)
 	{
 		$this->createDateSection($dateContent);
-		$this->createRoomSection($roomContent,$prices,$cantidades);
+		$this->createRoomSection($roomContent,$prices,$cantidades,$ids);
 		
 	}
 	

@@ -1,7 +1,5 @@
 <?php
 class ControllerContent{
-	public $NumHabit;
-	public $resquestRooms;
 	
 	function ControllerContent(){
 			include 'imageData.php';
@@ -35,31 +33,30 @@ class ControllerContent{
 			
 			$modelContentReservation = new modelContentReservation();
 			$viewContentReservation = new viewContentReservation();
-			$modelContentReservation->prueba1();
-			$viewContentReservation->createReservation1($modelContentReservation->dateContent,$modelContentReservation->habitaciones,$modelContentReservation->prices,$modelContentReservation->cantidades);
 			
-			//$viewContentReservation->createContentPromociones($modelContentReservation->getContentPromociones());
+			
+			$modelContentReservation->noRooms();
+			$viewContentReservation->noRooms($modelContentReservation->dateContent);
 	
 		}elseif($section=="reservaS"){
 			include 'viewContentReservation.php';
 			include 'modelContentReservation.php';
-					/*include 'reservationController.php';
-		include 'reservations.php';*/
+			include 'reservationController.php';
 			
+			$reservationController = new ReservationController();
 			
-			$serialized = $_SESSION['rooms'];
+			$fechaIn = $_GET["fechaIn"]; 
+			$fechaOut = $_GET["fechaOut"];
 			
-			//$this->NumHabit = unserialize($_SESSION['result']);
-			$rooms = unserialize($serialized);
+			$rooms = $reservationController->escogerFecha($fechaIn,$fechaOut);
 			
 			
 			$modelContentReservation = new modelContentReservation();
 			$viewContentReservation = new viewContentReservation();
 			
-				$modelContentReservation->crearHabitaciones($rooms);
-				$viewContentReservation->createReservation1($modelContentReservation->dateContent,$modelContentReservation->habitaciones,$modelContentReservation->prices,$modelContentReservation->cantidades);
+			$modelContentReservation->crearHabitaciones($rooms);
+			$viewContentReservation->createReservation1($modelContentReservation->dateContent,$modelContentReservation->habitaciones,$modelContentReservation->prices,$modelContentReservation->cantidades,$modelContentReservation->ids);
 
-			//$viewContentReservation->createContentPromociones($modelContentReservation->getContentPromociones());
 	
 		}elseif($section=="reserva2"){
 			include 'viewContentReservation.php';
@@ -69,14 +66,21 @@ class ControllerContent{
 			$viewContentReservation = new viewContentReservation();
 			$modelContentReservation->prueba2();
 			$viewContentReservation->createReservation2($modelContentReservation->dateContent,$modelContentReservation->promociones);
-			//$viewContentReservation->createContentPromociones($modelContentReservation->getContentPromociones());
+			
 	
 		}elseif($section=="reserva3"){
 			include 'viewContentReservation.php';
 
 			$viewContentReservation = new viewContentReservation();
 			$viewContentReservation->createFormSection();
-			//$viewContentReservation->createContentPromociones($modelContentReservation->getContentPromociones());
+			
+	
+		}elseif($section=="reserva4"){
+			include 'viewContentReservation.php';
+
+			$viewContentReservation = new viewContentReservation();
+			$viewContentReservation->createResumen();
+			
 	
 		}else{
 			include 'viewContentIndex.php';
