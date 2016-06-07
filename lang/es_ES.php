@@ -210,7 +210,15 @@ $lang = array(
 	'Modificar' => 'Modificar',
 	'Eliminar' => 'Eliminar',
 	'Búsqueda' => 'Búsqueda',
-	'Buscar' => 'Buscar'
+	'Buscar' => 'Buscar',
+	//___________________________________________________________________________________________________________________//
+	//LOGIN//
+	'Iniciar Sesión' => 'Iniciar Sesión',
+	'Nombre de Usuario' => 'Nombre de Usuario',
+	'Introducir Nombre de Usuario' => 'Introducir Nombre de Usuario',
+	'Contraseña' => 'Contraseña',
+	'Introducir Contraseña' => 'Introducir Contraseña'
+	
 );
 
 

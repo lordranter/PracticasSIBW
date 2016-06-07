@@ -109,10 +109,16 @@ class Controller{
 				';
 		}
 		if($this->section == "reserva4"){
-			echo'<script src="scripts/pickDate.js" type="text/javascript"></script>
+			echo'<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+			<script src="scripts/pickDate.js" type="text/javascript"></script>
 				<script>
 					createResumen();
 				</script>
+				';
+		}
+		if($this->section == "admin"){
+			echo'<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+			<script src="scripts/login.js" type="text/javascript"></script>
 				';
 		}
 	}

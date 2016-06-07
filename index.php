@@ -82,7 +82,7 @@ if($section=="test"){
 	<body>
 				
 	<?php
-	if($section!="admin" && $section!="adminLogin")
+	if($section!="admin")
 	{
 		$controller->openMainContainer();
 		$controller->createHeader();

@@ -83,12 +83,12 @@ class ControllerContent{
 			
 	
 		}elseif($section=="admin"){
-			include 'viewContentAdmin.php';
-			include 'modelContentAdmin.php';
+			include 'viewContentLogin.php';
+			include 'modelContentLogin.php';
 
-			$modelContentAdmin = new modelContentAdmin();
-			$viewContentAdmin = new viewContentAdmin();
-			$viewContentAdmin->createView($modelContentAdmin);
+			$modelContentLogin = new modelContentLogin();
+			$viewContentLogin = new viewContentLogin();
+			$viewContentLogin->createView($modelContentLogin);
 			
 	
 		}else{
