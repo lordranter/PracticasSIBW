@@ -55,8 +55,8 @@ class Prices{
 	function getPriceByDateRangeAndRoomType($roomtype, $firstDay, $finalDay){
 		$sql = "select * from price 
 			where roomtype=" . $roomtype . " 
-			and firstDay<=STR_TO_DATE('" . $finalDay . "', '%Y-%m-%d') 
-			and finalDay>=STR_TO_DATE('" . $firstDay . "', '%Y-%m-%d')
+			and firstDay<=STR_TO_DATE('" . $firstDay . "', '%Y-%m-%d') 
+			and finalDay>=STR_TO_DATE('" . $finalDay  . "', '%Y-%m-%d')
 			";
 
 		$query = $this->connection->query($sql);

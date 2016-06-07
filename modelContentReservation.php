@@ -94,18 +94,23 @@ class modelContentReservation{
 		
 		for($i = 0; $i < count($RoomsTypeNum); $i++)
 		{
-			if($RoomsTypeNum[$i]->idTypeRoom == 0)
+			if($RoomsTypeNum[$i]->idTypeRoom == 4){
+				$this->habitaciones[] = new RoomContent($lang[' Habitación individual '],
+				$lang[' En nuestras habitaciones individuales podrá disfrutar de sus vacaciones o pasar una estancia acomodada. '],
+				$lang['Imagenes/habitacion1.jpg']);
+				
+			}elseif($RoomsTypeNum[$i]->idTypeRoom == 1)
 			{
 				$this->habitaciones[] = new RoomContent($lang[' Habitación doble o twin '],
 				$lang[' En nuestras habitaciones standard disfrutará de todo el equipamiento y comodidades que su estancia en Granada merece. '],
 				$lang['Imagenes/habitacion1.jpg']);
 				
-			}elseif($RoomsTypeNum[$i]->idTypeRoom == 1)
+			}elseif($RoomsTypeNum[$i]->idTypeRoom == 2)
 			{
 				$this->habitaciones[] = new RoomContent($lang[' Habitación superior '],
 				$lang[' Disfrute de una magnifica vista de Plaza Nueva y el centro de Granada desde nuestras habitaciones superiores. '],
 				$lang['Imagenes/habitacion2.jpg']);
-			}else{
+			}elseif($RoomsTypeNum[$i]->idTypeRoom == 3){
 				$this->habitaciones[] = new RoomContent($lang[' Habitación triple '],
 				$lang[' En nuestras habitaciones triples podrá disfrutar de sus vacaciones en familia o con amigos en el centro de Granada. '],
 				$lang['Imagenes/habitacion3.jpg']);
@@ -115,7 +120,7 @@ class modelContentReservation{
 			
 		}
 		
-				$this->prices = array("120,00","140,00","180,00");
+				$this->prices = array("120,00","140,00","180,00","120,00");
 	}
 	
 	function prueba2()

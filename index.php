@@ -82,12 +82,19 @@ if($section=="test"){
 	<body>
 				
 	<?php
-	$controller->openMainContainer();
-	$controller->createHeader();
-	$controller->createSidebar();
-	$controller->createContent();
-	$controller->createFooter();
-	$controller->closeMainContainer();
+	if($section!="admin" && $section!="adminLogin")
+	{
+		$controller->openMainContainer();
+		$controller->createHeader();
+		$controller->createSidebar();
+		$controller->createContent();
+		$controller->createFooter();
+		$controller->closeMainContainer();
+	}else{
+		$controller->openMainContainer();
+		$controller->createContent();
+		$controller->closeMainContainer();
+	}
 	?>
 
 	</body>

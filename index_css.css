@@ -1488,9 +1488,43 @@ display: block;
 
 	width: 15%;
 }
+.Cabecera5{
+
+	width: 15%;
+}
+.Cabecera6{
+
+	width: 15%;
+}
 .cabeceraRes{
     margin-top: 12px;
 }
+.CabeceraAd1{
+    width: 10%;
+    margin-left: 15px;
+	
+}
+.CabeceraAd2{
+
+	    width: 40%;
+}
+.CabeceraAd3{
+
+	    width: 15%;
+}
+.CabeceraAd4{
+
+	width: 15%;
+}
+.CabeceraAd5{
+
+	width: 15%;
+}
+.CabeceraAd6{
+
+	width: 15%;
+}
+
 .cabeceraRes p{
 display: inline-block;
 text-align: center;
@@ -1623,4 +1657,65 @@ width: 15%;
 .resumen p{
 	color: #48AEF9;
 	margin-left: 10px;
+}
+
+/* Vista admin */
+
+#formulario-Busqueda{
+	text-align: right;
+    border-radius: 7px;
+    border: 2px solid #7B7B7B;
+}
+
+#formulario-Busqueda input{
+	height: 30px;
+    text-align: center;
+    padding-left: 14px;
+    font-family: arial;
+    margin-bottom: 5px;
+	color: black;
+	background-color: white;
+	border-color: rgba(0, 0, 0, 0.50)!important;
+}
+
+.CabeceraAd1{
+    width: 10%;
+    margin-left: 15px;
+	
+}
+.CabeceraAd2{
+
+	    width: 25%;
+}
+.CabeceraAd3{
+
+	    width: 15%;
+}
+.CabeceraAd4{
+
+	width: 11%;
+}
+.CabeceraAd5{
+
+	width: 11%;
+}
+.CabeceraAd6{
+
+	width: 11%;
+}
+
+.hipervinculoAdmin p{
+	color: rgba(0, 0, 255, 0.74)!important;
+	text-decoration: underline!important;
+}
+#tituloAdministracion{
+    text-align: center;
+    color: rgba(0, 0, 255, 0.74)!important;
+    font-size: 35px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.BotonBuscar{
+	background-color: #444444!important;
+	color: white!important;
 }

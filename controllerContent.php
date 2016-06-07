@@ -82,6 +82,15 @@ class ControllerContent{
 			$viewContentReservation->createResumen();
 			
 	
+		}elseif($section=="admin"){
+			include 'viewContentAdmin.php';
+			include 'modelContentAdmin.php';
+
+			$modelContentAdmin = new modelContentAdmin();
+			$viewContentAdmin = new viewContentAdmin();
+			$viewContentAdmin->createView($modelContentAdmin);
+			
+	
 		}else{
 			include 'viewContentIndex.php';
 			include 'modelContentIndex.php';

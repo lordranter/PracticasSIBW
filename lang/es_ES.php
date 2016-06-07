@@ -1,4 +1,4 @@
-<?php 
+﻿<?php 
 $lang = array(
 
 	'Bienvenido al Hotel Plaza Nueva Granada' => 'Bienvenido al Hotel Plaza Nueva Granada',
@@ -31,6 +31,9 @@ $lang = array(
 	' Habitación triple ' => ' Habitación triple ',
 	' En nuestras habitaciones triples podrá disfrutar de sus vacaciones en familia o con amigos en el centro de Granada. ' => ' En nuestras habitaciones triples podrá disfrutar de sus vacaciones en familia o con amigos en el centro de Granada. ',
 	'Imagenes/habitacion3.jpg' => 'Imagenes/habitacion3.jpg',
+	' Habitación individual ' => ' Habitación individual ',
+	' En nuestras habitaciones individuales podrá disfrutar de sus vacaciones o pasar una estancia acomodada. ' => ' En nuestras habitaciones individuales podrá disfrutar de sus vacaciones o pasar una estancia acomodada. ',
+	'Imagenes/hotel-plaza-nueva-granada-04-habitacion.jpg' => 'Imagenes/hotel-plaza-nueva-granada-04-habitacion.jpg',
 	'Contacto' => 'Contacto',
 	' Si necesita cualquier pongase en contacto con nosotros. ' => ' Si necesita cualquier pongase en contacto con nosotros. ',
 	'Imagenes/mapa.jpg' => 'Imagenes/mapa.jpg',
@@ -130,6 +133,7 @@ $lang = array(
 	'imágenes' => 'imágenes',
 	'contacto' => 'contacto',
 	'opiniones' => 'opiniones',
+	'reservar' => 'reservar',
 	
 	//___________________________________________________________________________________________________________________//
 	//SIDEBAR//
@@ -145,7 +149,10 @@ $lang = array(
 	' Habitacion doble + tren turistico + espectaculo flamenco ' => ' Habitacion doble + tren turistico + espectaculo flamenco ',
 	' Oferta dos noches ' => ' Oferta dos noches ',
 	' Oferta 10% de descuento ' => ' Oferta 10% de descuento ',
+	'OFERTA 10% descuento' => 'OFERTA 10% descuento',
+	'Disfrute de un 10% de descuento en su estancia.' => 'Disfrute de un 10% de descuento en su estancia.',
 	' Oferta reserva anticipada ' => ' Oferta reserva anticipada ',
+	' Promoción escogida: ' => ' Promoción escogida: ',
 	
 	
 	//___________________________________________________________________________________________________________________//
@@ -154,8 +161,56 @@ $lang = array(
 	'Hotel Plaza Nueva Granada ***' => 'Hotel Plaza Nueva Granada ***',
 	'Promociones - ' => 'Promociones - ',
 	'Valoraciones - ' => 'Valoraciones - ',
-	'Imagenes - ' => 'Imagenes - '
+	'Imagenes - ' => 'Imagenes - ',
 	
+	
+	
+
+	//___________________________________________________________________________________________________________________//
+	//RESERVAS//
+	'Aceptar' => 'Aceptar',
+	'Continuar' => 'Continuar',
+	'Precio' => 'Precio',
+	'€' => '€',
+	'Cantidad' => 'Cantidad',
+	'Añadir' => 'Añadir',
+	'Retroceder' => 'Retroceder',
+	'Seleccionar' => 'Seleccionar',
+	'Fecha de entrada' => 'Fecha de entrada',
+	'Fecha de salida' => 'Fecha de salida',
+	
+	//___________________________________________________________________________________________________________________//
+	//RESERVAS FORMULARIO//
+	'Será obligatorio rellenar todos los campos a excepción de los opcionales marcados como (opcional).' => 'Será obligatorio rellenar todos los campos a excepción de los opcionales marcados como (opcional).',
+	'Nombre' => 'Nombre',
+	'Apellidos' => 'Apellidos',
+	'E-mail' => 'E-mail',
+	'Teléfono' => 'Teléfono',
+	'Dirección' => 'Dirección',
+	'Ciudad' => 'Ciudad',
+	'Es obligatorio rellenar todos los siguientes campos.' => 'Es obligatorio rellenar todos los siguientes campos.',
+	'Número de la tarjeta'=> 'Número de la tarjeta',
+	'Nombre del titular' => 'Nombre del titular',
+	'MM/AA' => 'MM/AA',
+	'CVC' => 'CVC',
+	'Aceptas los términos y condiciones del hotel.' => 'Aceptas los términos y condiciones del hotel.',
+	'DNI' => 'DNI',
+	'Seleccione una fecha para consultar disponibilidad.' => 'Seleccione una fecha para consultar disponibilidad.',
+	' Habitaciones dobles: ' => ' Habitaciones dobles: ',
+	' Habitaciones triples: ' => ' Habitaciones triples: ',
+	' Habitacion superiores: ' => ' Habitacion superiores: ',
+	
+	//___________________________________________________________________________________________________________________//
+	//ADMINISTRACIÓN//
+	'Panel de administración' => 'Panel de administración',
+	'Nº Reserva' => 'Nº Reserva',
+	'Nombre del cliente' => 'Nombre del cliente',
+	'DNI' => 'DNI',
+	'Consultar' => 'Consultar',
+	'Modificar' => 'Modificar',
+	'Eliminar' => 'Eliminar',
+	'Búsqueda' => 'Búsqueda',
+	'Buscar' => 'Buscar'
 );
 
 

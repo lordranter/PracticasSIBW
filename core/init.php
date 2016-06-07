@@ -1,5 +1,4 @@
 <?php 
-session_start();
 
 $lenguas_permitidas = array('es_ES','en_EN');
 

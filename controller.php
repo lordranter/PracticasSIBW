@@ -15,7 +15,7 @@ class Controller{
 		include 'lang/es_ES.php';
 		
 		$this->section = $secc;
-		if($this->section!="valoraciones" && $this->section!="imagenes" && $this->section!="promociones" && $this->section!="reserva" && $this->section!="reservaS" && $this->section!="reserva2" && $this->section!="reserva3"&& $this->section!="reserva4"){
+		if($this->section!="valoraciones" && $this->section!="imagenes" && $this->section!="promociones" && $this->section!="reserva" && $this->section!="reservaS" && $this->section!="reserva2" && $this->section!="reserva3"&& $this->section!="reserva4"&& $this->section!="admin"){
 			$this->section = "index";
 		}
 	}
